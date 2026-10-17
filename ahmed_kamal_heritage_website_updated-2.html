@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#022c22">
+  <meta name="description" content="الموقع الشخصي لأحمد كمال أحمد محمد غالي، استشاري ومتخصص في أعمال الترميم الدقيق للمباني الأثرية والتاريخية.">
+  <title>أحمد كمال أحمد محمد غالي | الترميم الدقيق وحفظ التراث</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    :root {
+      --green-deep: #022c22;
+      --green: #064e3b;
+      --green-light: #0d6b50;
+      --gold: #d97706;
+      --gold-light: #f4b544;
+      --cream: #fcf8f2;
+      --ink: #1c2d27;
+      --muted: #60716a;
+      --white: #fff;
+      --shadow: 0 18px 45px rgba(2, 44, 34, .12);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body {
+      margin: 0; color: var(--ink); background: var(--cream);
+      font-family: "Tajawal", sans-serif; line-height: 1.75; overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .container { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+    .pattern {
+      background-image: url("data:image/svg+xml,%3Csvg width='76' height='76' viewBox='0 0 76 76' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d97706' stroke-width='.8' stroke-opacity='.12'%3E%3Cpath d='M38 0L76 38 38 76 0 38z'/%3E%3Cpath d='M0 0l76 76M76 0L0 76'/%3E%3C/g%3E%3C/svg%3E");
+    }
+    .site-header {
+      position: sticky; top: 0; z-index: 100; color: var(--cream);
+      background: rgba(2, 44, 34, .94); backdrop-filter: blur(16px);
+      border-bottom: 2px solid var(--gold); box-shadow: 0 8px 28px #022c2220;
+    }
+    .nav { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .brand-mark {
+      display: grid; place-items: center; width: 48px; height: 48px; flex: 0 0 auto;
+      border: 1px solid var(--gold-light); border-radius: 50%; color: var(--gold-light);
+      background: linear-gradient(145deg, #0b6148, var(--green-deep)); font: 700 28px "Amiri", serif;
+      box-shadow: 0 0 0 5px #d9770614; transition: transform .4s ease;
+    }
+    .brand:hover .brand-mark { transform: rotate(-12deg) scale(1.06); }
+    .brand-name { margin: 0; font: 700 20px "Amiri", serif; color: #fff; line-height: 1.25; }
+    .brand-subtitle { margin: 4px 0 0; color: var(--gold-light); font-size: 12px; }
+    .language-switch { display: flex; padding: 4px; gap: 3px; border: 1px solid #d9770655; border-radius: 12px; background: #064e3b; }
+    .language-switch button {
+      border: 0; color: #fff8ec; background: transparent; padding: 8px 12px; border-radius: 8px;
+      cursor: pointer; transition: color .25s, background .25s, transform .25s; font-weight: 700;
+    }
+    .language-switch button:hover { transform: translateY(-1px); color: var(--gold-light); }
+    .language-switch button.active { background: var(--gold); color: var(--green-deep); }
+    .hero {
+      position: relative; isolation: isolate; overflow: hidden; text-align: center; color: var(--cream);
+      padding: clamp(74px, 10vw, 124px) 0 92px;
+      background: radial-gradient(ellipse at 50% 0%, #0d7051 0%, transparent 55%),
+                  linear-gradient(145deg, #022c22, #064e3b 55%, #022c22);
+      border-bottom: 5px solid var(--gold);
+    }
+    .hero::before, .hero::after {
+      content: ""; position: absolute; z-index: -1; width: 330px; height: 330px; border: 1px solid #f4b54430;
+      transform: rotate(45deg); animation: float 12s ease-in-out infinite;
+    }
+    .hero::before { top: -190px; right: -95px; box-shadow: 0 0 0 24px #f4b54408, 0 0 0 48px #f4b54406; }
+    .hero::after { bottom: -235px; left: -85px; animation-delay: -5s; box-shadow: 0 0 0 24px #f4b54408, 0 0 0 48px #f4b54406; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--gold-light); font-size: 13px; font-weight: 700; letter-spacing: .5px; margin-bottom: 12px; }
+    .eyebrow::before, .eyebrow::after { content: ""; width: 28px; height: 1px; background: var(--gold); }
+    .hero h1 { margin: 0 auto 14px; max-width: 900px; font: 700 clamp(34px, 5vw, 58px)/1.35 "Amiri", serif; animation: rise .8s both; }
+    .hero h2 { margin: 0 auto 20px; color: var(--gold-light); font-size: clamp(17px, 2.5vw, 25px); font-weight: 700; animation: rise .8s .12s both; }
+    .hero p { max-width: 760px; margin: 0 auto; color: #e0eee7; font-size: clamp(15px, 2vw, 18px); animation: rise .8s .24s both; }
+    .hero-rule { height: 3px; width: 78px; border-radius: 9px; background: var(--gold); margin: 28px auto 0; animation: expand .8s .3s both; }
+    section.content-section { padding: 76px 0; }
+    .contact-section { background: #fff; border-bottom: 1px solid #dbe8df; }
+    .section-heading { text-align: center; margin-bottom: 36px; }
+    .section-heading h2 { margin: 0; font: 700 clamp(27px, 4vw, 37px) "Amiri", serif; color: var(--green-deep); }
+    .section-heading p { margin: 8px auto 0; color: var(--muted); max-width: 640px; }
+    .heading-line { width: 76px; height: 3px; border-radius: 5px; margin: 15px auto 0; background: var(--gold); }
+    .contact-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; max-width: 1000px; margin: auto; }
+    .contact-card {
+      min-height: 142px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px;
+      border: 1px solid #dce9e0; border-radius: 18px; background: #fbfdfb; cursor: pointer;
+      transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease, background .3s ease;
+      position: relative; overflow: hidden;
+    }
+    .contact-card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(130deg, transparent, #d9770610); opacity: 0; transition: opacity .3s; }
+    .contact-card:hover { transform: translateY(-7px); box-shadow: var(--shadow); border-color: #d9770680; }
+    .contact-card:hover::before { opacity: 1; }
+    .contact-card .contact-icon { font-size: 31px; transition: transform .3s ease; }
+    .contact-card:hover .contact-icon { transform: scale(1.12) rotate(-4deg); }
+    .contact-card strong, .contact-card small { position: relative; }
+    .contact-card strong { font-size: 15px; }
+    .contact-card small { font-size: 11px; color: var(--muted); }
+    .whatsapp .contact-icon { color: #159b62; }
+    .telegram .contact-icon { color: #168dcc; }
+    .facebook .contact-icon { color: #1877f2; }
+    .linkedin .contact-icon { color: #0a66c2; }
+    .gmail .contact-icon { color: #d94841; }
+    .email-wrap { position: relative; min-width: 0; }
+    .email-popover {
+      position: absolute; z-index: 20; top: calc(100% + 12px); left: 50%; width: min(320px, calc(100vw - 36px));
+      padding: 17px; border: 1px solid #efb4b0; border-top: 4px solid #d94841; border-radius: 16px;
+      background: #fff; box-shadow: 0 20px 55px #022c2230; text-align: start;
+      transform: translate(-50%, -8px) scale(.97); opacity: 0; visibility: hidden; pointer-events: none;
+      transition: opacity .25s ease, transform .25s ease, visibility .25s;
+    }
+    [dir="rtl"] .email-popover { text-align: right; }
+    .email-popover.open { opacity: 1; visibility: visible; pointer-events: auto; transform: translate(-50%, 0) scale(1); animation: popIn .28s ease; }
+    .popover-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 11px; color: #b8322c; font-size: 13px; font-weight: 800; }
+    .close-email { border: 0; background: #f8eeee; color: #8d3833; border-radius: 8px; width: 28px; height: 28px; cursor: pointer; font-size: 20px; line-height: 1; }
+    .email-address { direction: ltr; unicode-bidi: isolate; display: block; padding: 11px 12px; margin-bottom: 12px; border-radius: 10px; background: #f7f7f7; color: #26332d; border: 1px solid #e8e8e8; font: 600 14px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; overflow-wrap: anywhere; user-select: all; }
+    .copy-email { width: 100%; display: flex; align-items: center; justify-content: center; gap: 9px; border: 0; border-radius: 10px; padding: 11px 14px; color: #fff; background: #d94841; cursor: pointer; font-weight: 800; transition: background .25s, transform .25s; }
+    .copy-email:hover { background: #b8322c; transform: translateY(-1px); }
+    .copy-email.copied { background: #168451; }
+    .projects-section { background: var(--cream); }
+    .projects-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    .project-card {
+      background: #fff; padding: 26px; border-radius: var(--radius); border: 1px solid #e8e5dc;
+      border-inline-start: 4px solid var(--gold); box-shadow: 0 7px 22px #022c2209;
+      transition: transform .35s ease, box-shadow .35s ease; position: relative; overflow: hidden;
+    }
+    .project-card::after { content: ""; position: absolute; width: 110px; height: 110px; border: 1px solid #d9770617; border-radius: 50%; inset-inline-end: -48px; bottom: -55px; transition: transform .5s ease; }
+    .project-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .project-card:hover::after { transform: scale(1.6); }
+    .project-number { display: inline-grid; place-items: center; width: 38px; height: 38px; margin-bottom: 10px; border-radius: 12px; background: #fff4df; color: #9c5808; font-weight: 800; font-size: 13px; }
+    .project-card h3 { color: var(--green-deep); margin: 0 0 8px; font: 700 23px "Amiri", serif; }
+    .project-card p { margin: 0; color: #5c6963; font-size: 15px; }
+    .site-footer { background: var(--green-deep); color: #d7e7df; padding: 25px 0; text-align: center; border-top: 3px solid var(--gold); font-size: 13px; }
+    .site-footer p { margin: 0; }
+    .back-top { position: fixed; z-index: 30; bottom: 22px; inset-inline-end: 22px; width: 43px; height: 43px; border: 1px solid #f4b54480; border-radius: 50%; display: grid; place-items: center; color: var(--green-deep); background: var(--gold-light); box-shadow: 0 8px 22px #022c2230; opacity: 0; visibility: hidden; transform: translateY(10px); transition: .25s; }
+    .back-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    @keyframes rise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes float { 0%,100% { translate: 0 0; rotate: 0deg; } 50% { translate: 0 18px; rotate: 8deg; } }
+    @keyframes expand { from { width: 0; opacity: 0; } to { width: 78px; opacity: 1; } }
+    @keyframes popIn { from { filter: blur(2px); } to { filter: blur(0); } }
+
+    .profile-section { background: #fff; border-top: 1px solid #e9eee9; }
+    .stats-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin:0 auto 42px; max-width:850px; }
+    .stat-card { padding:22px 16px; border:1px solid #e6e9df; border-radius:18px; text-align:center; background:linear-gradient(145deg,#fff,#fbf7ef); }
+    .stat-card strong { display:block; font:700 27px "Amiri",serif; color:var(--green); }
+    .stat-card span { font-size:13px; color:var(--muted); }
+    .timeline { max-width:900px; margin:auto; position:relative; }
+    .timeline::before { content:""; position:absolute; top:10px; bottom:10px; inset-inline-start:17px; width:2px; background:linear-gradient(var(--gold),#0d6b50,#d9e4dc); }
+    .timeline-item { position:relative; padding:0 52px 30px 0; }
+    [dir="ltr"] .timeline-item { padding:0 0 30px 52px; }
+    .timeline-dot { position:absolute; inset-inline-start:7px; top:5px; width:22px; height:22px; border-radius:50%; background:var(--gold); border:5px solid #fff0d7; box-shadow:0 0 0 1px #d9770655; }
+    .timeline-card { border:1px solid #e3e9e2; border-radius:18px; padding:22px 24px; background:#fff; box-shadow:0 7px 22px #022c2208; transition:transform .3s,box-shadow .3s; }
+    .timeline-card:hover { transform:translateY(-3px); box-shadow:var(--shadow); }
+    .timeline-date { display:inline-flex; padding:4px 11px; border-radius:30px; color:#8b4d05; background:#fff2d9; font-size:12px; font-weight:800; margin-bottom:8px; }
+    .timeline-card h3 { margin:0 0 5px; font:700 23px "Amiri",serif; color:var(--green-deep); }
+    .timeline-role { margin:0 0 9px; font-weight:700; color:#0b7252; }
+    .timeline-card p { margin:0; color:#5c6963; font-size:14px; }
+    .project-list { display:flex; flex-wrap:wrap; gap:8px; margin-top:13px; }
+    .project-chip { display:inline-flex; border:1px solid #e3e9e2; background:#f7faf7; color:#35564a; padding:6px 10px; border-radius:9px; font-size:12px; }
+    .skills-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+    .skill-card { background:#fff; border:1px solid #e4e9e2; border-radius:18px; padding:22px; transition:transform .3s,border-color .3s; }
+    .skill-card:hover { transform:translateY(-4px); border-color:#d9770680; }
+    .skill-card i { color:var(--gold); font-size:23px; margin-bottom:12px; }
+    .skill-card h3 { margin:0 0 8px; color:var(--green-deep); font:700 21px "Amiri",serif; }
+    .skill-card p { margin:0; color:var(--muted); font-size:14px; }
+    .education-card { max-width:900px; margin:auto; display:flex; align-items:flex-start; gap:18px; padding:26px; background:#fff; border:1px solid #e3e9e2; border-radius:20px; box-shadow:0 8px 24px #022c2209; }
+    .education-icon { flex:0 0 54px; height:54px; display:grid; place-items:center; border-radius:15px; color:var(--gold); background:var(--green-deep); font-size:22px; }
+    .education-card h3 { margin:0 0 5px; color:var(--green-deep); font:700 23px "Amiri",serif; }
+    .education-card p { margin:3px 0; color:var(--muted); font-size:14px; }
+    .language-pills { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+    .language-pill { min-width:140px; padding:13px 18px; border:1px solid #dce8de; border-radius:14px; background:#fff; text-align:center; }
+    .language-pill strong { display:block; color:var(--green-deep); }
+    .language-pill span { font-size:12px; color:var(--muted); }
+    @media(max-width:700px) { .stats-grid { grid-template-columns:1fr; gap:10px; } .skills-grid { grid-template-columns:1fr; } .timeline-card { padding:18px; } .education-card { padding:20px; } }
+
+    @media (max-width: 850px) { .contact-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    @media (max-width: 620px) {
+      .container { width: min(100% - 28px, 1120px); }
+      .nav { min-height: 76px; gap: 10px; }
+      .brand-mark { width: 40px; height: 40px; font-size: 24px; }
+      .brand-name { font-size: 16px; }
+      .brand-subtitle { font-size: 10px; max-width: 180px; }
+      .language-switch button { padding: 7px 8px; font-size: 12px; }
+      .contact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+      .contact-card { min-height: 128px; }
+      .projects-grid { grid-template-columns: 1fr; }
+      section.content-section { padding: 58px 0; }
+      .hero { padding: 68px 0 72px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body class="pattern">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="العودة إلى بداية الصفحة">
+        <span class="brand-mark">أ</span>
+        <span>
+          <span class="brand-name" data-ar="أحمد كمال غالي" data-en="Ahmed Kamal Ghaly" data-it="Ahmed Kamal Ghaly">أحمد كمال غالي</span>
+          <span class="brand-subtitle" data-ar="استشاري الترميم الدقيق للمباني الأثرية والتاريخية" data-en="Precision Conservation Consultant" data-it="Consulente di Conservazione">استشاري الترميم الدقيق للمباني الأثرية والتاريخية</span>
+        </span>
+      </a>
+      <div class="language-switch" aria-label="اختيار اللغة">
+        <button type="button" class="active" data-lang="ar">العربية</button>
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="it">IT</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow" data-ar="حفظ المباني الأثرية والتراثية" data-en="Preserving Heritage • Protecting Identity" data-it="Conservare il Patrimonio • Proteggere l’Identità">حفظ المباني الأثرية والتراثية</span>
+        <h1 data-ar="أحمد كمال أحمد محمد غالي" data-en="Ahmed Kamal Ahmed Mohamed Ghaly" data-it="Ahmed Kamal Ahmed Mohamed Ghaly">أحمد كمال أحمد محمد غالي</h1>
+        <h2 data-ar="استشاري ومتخصص في أعمال الترميم الدقيق للمباني الأثرية والتاريخية" data-en="Consultant & Manager of Precision Restoration and Architectural Heritage Conservation" data-it="Consulente e Direttore del Restauro di Precisione e della Conservazione del Patrimonio Architettonico">استشاري ومتخصص في أعمال الترميم الدقيق للمباني الأثرية والتاريخية</h2>
+        <p data-ar="خبرة أكثر من 23 عاماً في إدارة والإشراف على مشروعات الترميم الدقيق، والحفاظ على المباني الأثرية والتراثية، وتطوير المناطق التاريخية بالقاهرة." data-en="Over 23 years of experience managing and supervising precision restoration projects, conserving historic buildings, and revitalizing historic districts in Cairo." data-it="Oltre 23 anni di esperienza nella gestione e supervisione di progetti di restauro di precisione, conservazione di edifici storici e riqualificazione delle aree storiche del Cairo.">خبرة أكثر من 23 عاماً في إدارة والإشراف على مشروعات الترميم الدقيق، والحفاظ على المباني الأثرية والتراثية، وتطوير المناطق التاريخية بالقاهرة.</p>
+        <div class="hero-rule"></div>
+      </div>
+    </section>
+
+    <section class="content-section contact-section" id="contact">
+      <div class="container">
+        <div class="section-heading reveal">
+          <h2 data-ar="تواصل مباشرة" data-en="Get in Touch" data-it="Contatti Diretti">تواصل مباشرة</h2>
+          <p data-ar="اختر وسيلة التواصل المناسبة. اضغط على Gmail لإظهار البريد الإلكتروني ونسخه بسهولة." data-en="Choose your preferred contact method. Click Gmail to reveal and copy the email address." data-it="Scegli il metodo di contatto preferito. Premi Gmail per visualizzare e copiare l’indirizzo email.">اختر وسيلة التواصل المناسبة. اضغط على Gmail لإظهار البريد الإلكتروني ونسخه بسهولة.</p>
+          <div class="heading-line"></div>
+        </div>
+        <div class="contact-grid">
+          <a class="contact-card whatsapp reveal" href="https://wa.me/201061888325" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-whatsapp contact-icon" aria-hidden="true"></i>
+            <strong>WhatsApp</strong><small data-ar="مراسلة مباشرة" data-en="Send a message" data-it="Invia un messaggio">مراسلة مباشرة</small>
+          </a>
+          <a class="contact-card telegram reveal" href="https://t.me/+201061888325" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-telegram contact-icon" aria-hidden="true"></i>
+            <strong>Telegram</strong><small data-ar="تواصل عبر تيليجرام" data-en="Contact on Telegram" data-it="Contatta su Telegram">تواصل عبر تيليجرام</small>
+          </a>
+          <a class="contact-card facebook reveal" href="https://www.facebook.com/share/19kpTQacXC/" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-facebook contact-icon" aria-hidden="true"></i>
+            <strong>Facebook</strong><small data-ar="عرض الملف الشخصي" data-en="View profile" data-it="Visualizza il profilo">عرض الملف الشخصي</small>
+          </a>
+          <a class="contact-card linkedin reveal" href="https://www.linkedin.com/in/ahmed-kamal-395060290/" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-linkedin-in contact-icon" aria-hidden="true"></i>
+            <strong>LinkedIn</strong><small data-ar="الملف المهني" data-en="Professional profile" data-it="Profilo professionale">الملف المهني</small>
+          </a>
+          <div class="email-wrap reveal">
+            <button class="contact-card gmail" id="gmail-toggle" type="button" aria-expanded="false" aria-controls="email-popover" style="width:100%">
+              <i class="fa-solid fa-envelope contact-icon" aria-hidden="true"></i>
+              <strong>Gmail</strong><small data-ar="اضغط لإظهار البريد" data-en="Click to show email" data-it="Premi per mostrare l’email">اضغط لإظهار البريد</small>
+            </button>
+            <div class="email-popover" id="email-popover" role="dialog" aria-label="البريد الإلكتروني" aria-hidden="true">
+              <div class="popover-top">
+                <span data-ar="البريد الإلكتروني المباشر" data-en="Direct email address" data-it="Indirizzo email diretto">البريد الإلكتروني المباشر</span>
+                <button class="close-email" id="email-close" type="button" aria-label="إغلاق">&times;</button>
+              </div>
+              <span class="email-address" id="email-address">ahmedkimo909@gmail.com</span>
+              <button class="copy-email" id="copy-email" type="button">
+                <i class="fa-regular fa-copy" aria-hidden="true"></i>
+                <span data-ar="نسخ البريد الإلكتروني" data-en="Copy email address" data-it="Copia indirizzo email">نسخ البريد الإلكتروني</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section projects-section" id="projects">
+      <div class="container">
+        <div class="section-heading reveal">
+          <h2 data-ar="الأعمال والمشروعات الحالية" data-en="Current Projects & Works" data-it="Progetti e Lavori Attuali">الأعمال والمشروعات الحالية</h2>
+          <p data-ar="الحفاظ على المباني الأثرية والتراثية." data-en="Selected restoration and architectural heritage conservation projects." data-it="Una selezione di progetti di restauro e conservazione del patrimonio architettonico.">الحفاظ على المباني الأثرية والتراثية.</p>
+          <div class="heading-line"></div>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card reveal">
+            <span class="project-number">01</span>
+            <h3 data-ar="مشروع سوق الخيامية" data-en="Al-Khayamiya Market Project" data-it="Progetto del Mercato Al-Khayamiya">مشروع سوق الخيامية</h3>
+            <p data-ar="المرحلة الأولى من مشروع ترميم وإعادة تأهيل سوق الخيامية بقصبة رضوان بك، أحد المواقع الأثرية والتجارية والتاريخية البارزة بالقاهرة." data-en="Phase I of the restoration and rehabilitation of Al-Khayamiya Market at Qasabat Radwan Bek, a notable heritage, commercial, and historic site in Cairo." data-it="Prima fase del restauro e della riqualificazione del Mercato Al-Khayamiya a Qasabat Radwan Bek, importante sito storico, commerciale e patrimoniale del Cairo.">المرحلة الأولى من مشروع ترميم وإعادة تأهيل سوق الخيامية بقصبة رضوان بك، أحد المواقع الأثرية والتجارية والتاريخية البارزة بالقاهرة.</p>
+          </article>
+          <article class="project-card reveal">
+            <span class="project-number">02</span>
+            <h3 data-ar="مشروع سبيل أفندي المقاطعجي" data-en="Sabil Afandi Al-Mokataatgy Project" data-it="Progetto Sabil Afandi Al-Mokataatgy">مشروع سبيل أفندي المقاطعجي</h3>
+            <p data-ar="مشروع درء الخطورة وترميم سبيل أفندي المقاطعجي بمنطقة الأزهر." data-en="Hazard mitigation and restoration works at Sabil Afandi Al-Mokataatgy in the Al-Azhar area." data-it="Interventi di mitigazione del rischio e restauro del Sabil Afandi Al-Mokataatgy nell’area di Al-Azhar.">مشروع درء الخطورة وترميم سبيل أفندي المقاطعجي بمنطقة الأزهر.</p>
+          </article>
+          <article class="project-card reveal">
+            <span class="project-number">03</span>
+            <h3 data-ar="مسجد وسبيل الشيخ علي المطهر" data-en="Sheikh Ali Al-Mutahhar Mosque & Sabil" data-it="Moschea e Sabil di Sheikh Ali Al-Mutahhar">مسجد وسبيل الشيخ علي المطهر</h3>
+            <p data-ar="أعمال ترميم الشروخ بالواجهة الرئيسية والحوائط الحاملة بمسجد وسبيل الشيخ علي المطهر بشارع المعز لدين الله." data-en="Crack repair on the main façade and load-bearing walls of Sheikh Ali Al-Mutahhar Mosque and Sabil on Al-Moez Street." data-it="Riparazione delle fessure sulla facciata principale e sulle murature portanti della Moschea e Sabil di Sheikh Ali Al-Mutahhar in via Al-Moez.">أعمال ترميم الشروخ بالواجهة الرئيسية والحوائط الحاملة بمسجد وسبيل الشيخ علي المطهر بشارع المعز لدين الله.</p>
+          </article>
+          <article class="project-card reveal">
+            <span class="project-number">04</span>
+            <h3 data-ar="لجنة حصر آثار شمال القاهرة" data-en="North Cairo Antiquities Inventory Committee" data-it="Comitato per l’inventario delle antichità del Cairo settentrionale">لجنة حصر آثار شمال القاهرة</h3>
+            <p data-ar="عضو مشارك في لجنة حصر الآثار وإعداد التقارير الفنية والهندسية عن الحالة الراهنة للآثار المسجلة بشمال القاهرة." data-en="Participating member of the committee inventorying registered antiquities in North Cairo and preparing technical and engineering condition reports." data-it="Membro partecipante del comitato per l’inventario delle antichità registrate nel Cairo settentrionale e la redazione di rapporti tecnici sul loro stato.">عضو مشارك في لجنة حصر الآثار وإعداد التقارير الفنية والهندسية عن الحالة الراهنة للآثار المسجلة بشمال القاهرة.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section profile-section" id="career">
+      <div class="container">
+        <div class="section-heading reveal">
+          <h2 data-ar="المسيرة المهنية" data-en="Professional Career" data-it="Percorso Professionale">المسيرة المهنية</h2>
+          <p data-ar="محطات مهنية موثقة في السيرة الذاتية، من أعمال الترميم الميداني إلى الإشراف على مشروعات ترميم المباني الأثرية والتاريخية." data-en="Career milestones documented in the CV, from hands-on conservation to supervising heritage projects." data-it="Tappe professionali documentate nel CV, dal restauro sul campo alla supervisione di progetti di conservazione.">محطات مهنية موثقة في السيرة الذاتية، من أعمال الترميم الميداني إلى الإشراف على مشروعات ترميم المباني الأثرية والتاريخية.</p>
+          <div class="heading-line"></div>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card reveal"><strong data-ar="2004 – الآن" data-en="2004 – Present" data-it="2004 – Oggi">2004 – الآن</strong><span data-ar="تطوير القاهرة التاريخية" data-en="Historical Cairo Administration" data-it="Amministrazione del Cairo Storico">تطوير القاهرة التاريخية</span></div>
+          <div class="stat-card reveal"><strong data-ar="4 محطات" data-en="4 Roles" data-it="4 Incarichi">4 محطات</strong><span data-ar="جهات عمل مذكورة في السيرة الذاتية" data-en="Employers listed in the CV" data-it="Datori di lavoro indicati nel CV">جهات عمل مذكورة في السيرة الذاتية</span></div>
+          <div class="stat-card reveal"><strong data-ar="القاهرة" data-en="Cairo" data-it="Il Cairo">القاهرة</strong><span data-ar="مواقع ومبانٍ تاريخية متعددة" data-en="Multiple historic sites and buildings" data-it="Diversi siti ed edifici storici">مواقع ومبانٍ تاريخية متعددة</span></div>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item reveal"><span class="timeline-dot"></span><div class="timeline-card">
+            <span class="timeline-date" data-ar="يناير 2004 – حتى الآن وفق السيرة الذاتية" data-en="Jan 2004 – Present, according to CV" data-it="Gen 2004 – Oggi, secondo il CV">يناير 2004 – حتى الآن وفق السيرة الذاتية</span>
+            <h3 data-ar="تطوير القاهرة التاريخية" data-en="Historical Cairo Administration" data-it="Amministrazione del Cairo Storico">تطوير القاهرة التاريخية</h3>
+            <p class="timeline-role" data-ar="أخصائي ترميم (مشرف مشروعات)" data-en="Conservation Specialist (Projects Supervisor)" data-it="Specialista della conservazione (Supervisore di progetto)">أخصائي ترميم (مشرف مشروعات)</p>
+            <p data-ar="الإشراف على أعمال صيانة وترميم المباني الأثرية ومشروعات الحفاظ على التراث في القاهرة التاريخية." data-en="Supervision of conservation and restoration works on historic buildings and heritage projects in Historic Cairo." data-it="Supervisione di interventi di conservazione e restauro di edifici storici e progetti patrimoniali nel Cairo Storico.">الإشراف على أعمال صيانة وترميم المباني الأثرية ومشروعات الحفاظ على التراث في القاهرة التاريخية.</p>
+          </div></article>
+          <article class="timeline-item reveal"><span class="timeline-dot"></span><div class="timeline-card">
+            <span class="timeline-date" data-ar="يوليو 2002 – يناير 2004" data-en="July 2002 – January 2004" data-it="Luglio 2002 – Gennaio 2004">يوليو 2002 – يناير 2004</span>
+            <h3 data-ar="المركز المصري الإيطالي لترميم الآثار" data-en="Italian Egyptian Centre for Conservation & Monuments" data-it="Centro Italo-Egiziano per la Conservazione e i Monumenti">المركز المصري الإيطالي لترميم الآثار</h3>
+            <p class="timeline-role" data-ar="أخصائي ترميم" data-en="Conservator" data-it="Restauratore">أخصائي ترميم</p>
+            <p data-ar="المشاركة في مشروع ترميم سماخانة الدراويش المولوية، بما شمل المونة، والإطارات الجصية المكتوبة، والنوافذ الجصية، والواجهات الحجرية، والأسقف الخشبية." data-en="Worked on the Samaakhana of the Mevlevi Dervishes conservation project, including mortar, inscribed gypsum frames, gypsum windows, stone façades, and wooden ceilings." data-it="Ha partecipato al restauro della Samaakhana dei dervisci Mevlevi: malte, cornici in gesso iscritte, finestre in gesso, facciate in pietra e soffitti lignei.">المشاركة في مشروع ترميم سماخانة الدراويش المولوية، بما شمل المونة، والإطارات الجصية المكتوبة، والنوافذ الجصية، والواجهات الحجرية، والأسقف الخشبية.</p>
+          </div></article>
+          <article class="timeline-item reveal"><span class="timeline-dot"></span><div class="timeline-card">
+            <span class="timeline-date" data-ar="مايو 2002 – يونيو 2002" data-en="May 2002 – June 2002" data-it="Maggio 2002 – Giugno 2002">مايو 2002 – يونيو 2002</span>
+            <h3 data-ar="اتحاد الشركة الرباعية والمشروعات الهندسية" data-en="Union of Fourth Company & Engineering Projects" data-it="Union of Fourth Company & Engineering Projects">اتحاد الشركة الرباعية والمشروعات الهندسية</h3>
+            <p class="timeline-role" data-ar="أخصائي ترميم" data-en="Conservator" data-it="Restauratore">أخصائي ترميم</p>
+            <p data-ar="أعمال ترميم الأبواب والنوافذ الخشبية والواجهات الحجرية والأسقف الزخرفية والمذهبة في عدد من المباني الأثرية." data-en="Conservation of wooden doors and windows, stone façades, and decorative and gilded ceilings at several historic buildings." data-it="Conservazione di porte e finestre in legno, facciate in pietra e soffitti decorativi e dorati in diversi edifici storici.">أعمال ترميم الأبواب والنوافذ الخشبية والواجهات الحجرية والأسقف الزخرفية والمذهبة في عدد من المباني الأثرية.</p>
+          </div></article>
+          <article class="timeline-item reveal"><span class="timeline-dot"></span><div class="timeline-card">
+            <span class="timeline-date" data-ar="يوليو 1998 – أبريل 2002" data-en="July 1998 – April 2002" data-it="Luglio 1998 – Aprile 2002">يوليو 1998 – أبريل 2002</span>
+            <h3 data-ar="شركة المقاولون العرب" data-en="Arab Contractors Company" data-it="Arab Contractors Company">شركة المقاولون العرب</h3>
+            <p class="timeline-role" data-ar="أخصائي ترميم" data-en="Conservator" data-it="Restauratore">أخصائي ترميم</p>
+            <p data-ar="أعمال ترميم الأسقف الخشبية والنوافذ البرونزية والأرضيات الرخامية والنوافذ الجصية في مساجد ووكالات وسبل تاريخية." data-en="Conservation of wooden ceilings, bronze windows, marble floors, and gypsum windows at historic mosques, wakalas, and sabils." data-it="Conservazione di soffitti lignei, finestre in bronzo, pavimenti in marmo e finestre in gesso in moschee, wakala e sabil storici.">أعمال ترميم الأسقف الخشبية والنوافذ البرونزية والأرضيات الرخامية والنوافذ الجصية في مساجد ووكالات وسبل تاريخية.</p>
+          </div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section projects-section" id="portfolio">
+      <div class="container">
+        <div class="section-heading reveal">
+          <h2 data-ar="أبرز مشروعات الترميم السابقة" data-en="Selected Past Conservation Projects" data-it="Principali Progetti di Conservazione">أبرز مشروعات الترميم السابقة</h2>
+          <p data-ar="مشروعات ومواقع تاريخية وردت بالاسم في السيرة الذاتية، مرتبة حسب مجال العمل." data-en="Historic projects and sites named in the CV, grouped by type of work." data-it="Progetti e siti storici citati nel CV, raggruppati per tipologia di intervento.">مشروعات ومواقع تاريخية وردت بالاسم في السيرة الذاتية، مرتبة حسب مجال العمل.</p>
+          <div class="heading-line"></div>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card reveal"><span class="project-number">01</span><h3 data-ar="مشروعات تطوير القاهرة التاريخية" data-en="Historical Cairo Administration Projects" data-it="Progetti del Cairo Storico">مشروعات تطوير القاهرة التاريخية</h3><p data-ar="الإشراف وإدارة مشروعات ترميم المباني الأثرية والتاريخية التالية:" data-en="Supervision of the following conservation projects:" data-it="Supervisione dei seguenti progetti di conservazione:">الإشراف على مشروعات الحفاظ والترميم التالية:</p><div class="project-list"><span class="project-chip" data-ar="مجموعة الجوهري — شارع المعز (5 مبانٍ)" data-en="Al Gohary Group — Al-Moez Street (5 buildings)" data-it="Gruppo Al Gohary — Via Al-Moez (5 edifici)">مجموعة الجوهري — شارع المعز (5 مبانٍ)</span><span class="project-chip" data-ar="مجموعة أبو الدهب — الأزهر (11 مبنى)" data-en="Abo Aldahab Group — Al-Azhar (11 buildings)" data-it="Gruppo Abo Aldahab — Al-Azhar (11 edifici)">مجموعة أبو الدهب — الأزهر (11 مبنى)</span><span class="project-chip" data-ar="حائط مجرى العيون — مصر القديمة" data-en="Magra Alouon Stone Wall — Old Cairo" data-it="Muro di Magra Alouon — Vecchio Cairo">حائط مجرى العيون — مصر القديمة</span><span class="project-chip" data-ar="بيت علي كتخدا (الربعمائة)" data-en="Ali Katkhoda House (Al Robomaa)" data-it="Casa di Ali Katkhoda (Al Robomaa)">بيت علي كتخدا (الربعمائة)</span><span class="project-chip" data-ar="تطوير وترميم المسرح القومي — العتبة" data-en="National Theatre — Ataba" data-it="Teatro Nazionale — Ataba">تطوير وترميم المسرح القومي — العتبة</span><span class="project-chip" data-ar="ترميم وتأهيل متحف النسيج — شارع المعز" data-en="Textile Museum — Al-Moez Street" data-it="Museo del Tessuto — Via Al-Moez">ترميم وتأهيل متحف النسيج — شارع المعز</span><span class="project-chip" data-ar="وكالة قايتباي — الجمالية" data-en="Kaytbay Wekala — Al-Gamaliya" data-it="Wekala di Kaytbay — Al-Gamaliya">وكالة قايتباي — الجمالية</span></div></article>
+          <article class="project-card reveal"><span class="project-number">02</span><h3 data-ar="مشروعات المقاولون العرب" data-en="Arab Contractors Projects" data-it="Progetti Arab Contractors">مشروعات المقاولون العرب</h3><p data-ar="ترميم عناصر معمارية وزخرفية في المواقع التالية:" data-en="Conservation of architectural and decorative elements at:" data-it="Conservazione di elementi architettonici e decorativi nei seguenti siti:">ترميم عناصر معمارية وزخرفية في المواقع التالية:</p><div class="project-list"><span class="project-chip" data-ar="مسجد السيدة زينب" data-en="Al-Sayeda Zainab Mosque" data-it="Moschea di Al-Sayeda Zainab">مسجد السيدة زينب</span><span class="project-chip" data-ar="مسجد ومدرسة الغوري" data-en="Al-Ghory Mosque & School" data-it="Moschea e scuola Al-Ghory">مسجد ومدرسة الغوري</span><span class="project-chip" data-ar="مسجد محمد بن قلاوون" data-en="Mohamed Bin Qalawun Mosque" data-it="Moschea di Mohamed Bin Qalawun">مسجد محمد بن قلاوون</span><span class="project-chip" data-ar="مسجد الجوهري" data-en="Al-Gohary Mosque" data-it="Moschea Al-Gohary">مسجد الجوهري</span><span class="project-chip" data-ar="مقعد المولا" data-en="Al-Molaa Miqaad" data-it="Al-Molaa Miqaad">مقعد المولا</span><span class="project-chip" data-ar="مسجد تغري بردي" data-en="Thaghry Bardy Mosque" data-it="Moschea Thaghry Bardy">مسجد تغري بردي</span><span class="project-chip" data-ar="وكالة وسبيل جمال الدين الذهبي" data-en="Gamal Al-Deen Al-Dahaby Wekala & Sabil" data-it="Wekala e Sabil di Gamal Al-Deen Al-Dahaby">وكالة وسبيل جمال الدين الذهبي</span><span class="project-chip" data-ar="سبيل طه حسين الورداني" data-en="Taha Heisein Al-Werdany Sabil" data-it="Sabil di Taha Heisein Al-Werdany">سبيل طه حسين الورداني</span></div></article>
+          <article class="project-card reveal"><span class="project-number">03</span><h3 data-ar="مشروعات اتحاد الشركة الرباعية والمشروعات الهندسية" data-en="Union of Fourth Company & Engineering Projects" data-it="Union of Fourth Company & Engineering Projects">مشروعات اتحاد الشركة الرباعية والمشروعات الهندسية</h3><p data-ar="أعمال ترميم الأبواب والنوافذ الخشبية والواجهات الحجرية والأسقف الزخرفية والمذهبة في:" data-en="Conservation of wooden doors and windows, stone façades, and decorative and gilded ceilings at:" data-it="Conservazione di porte e finestre in legno, facciate in pietra e soffitti decorativi e dorati presso:">أعمال ترميم الأبواب والنوافذ الخشبية والواجهات الحجرية والأسقف الزخرفية والمذهبة في:</p><div class="project-list"><span class="project-chip" data-ar="وكالة الغوري" data-en="Wekalat Al Ghory" data-it="Wekalat Al Ghory">وكالة الغوري</span><span class="project-chip" data-ar="مسجد العيني" data-en="Al Einy Mosque" data-it="Moschea Al Einy">مسجد العيني</span><span class="project-chip" data-ar="مسجد كافور الزمام" data-en="Kafor Alzemam Mosque" data-it="Moschea Kafor Alzemam">مسجد كافور الزمام</span><span class="project-chip" data-ar="بيت الست وسيلة" data-en="Al Seit Wasela House" data-it="Casa Al Seit Wasela">بيت الست وسيلة</span><span class="project-chip" data-ar="قبة قوصون القاصراوي" data-en="Sodon Al Kasrawy Dome" data-it="Cupola Sodon Al Kasrawy">قبة قوصون القاصراوي</span></div></article>
+          <article class="project-card reveal"><span class="project-number">04</span><h3 data-ar="مشروع ترميم سماخانة الدراويش المولوية" data-en="Samaakhana of the Mevlevi Dervishes" data-it="Samaakhana dei Dervisci Mevlevi">مشروع ترميم سماخانة الدراويش المولوية</h3><p data-ar="ضمن فريق العمل بالمركز المصري الإيطالي لترميم الآثار، شملت الأعمال عناصر معمارية وخامات متنوعة." data-en="As part of work with the Italian Egyptian Centre for Conservation & Monuments, works covered a range of architectural materials." data-it="Nell’ambito del lavoro presso il Centro Italo-Egiziano, gli interventi hanno riguardato diversi materiali architettonici.">ضمن فريق العمل بالمركز المصري الإيطالي لترميم الآثار، شملت الأعمال عناصر معمارية وخامات متنوعة.</p><div class="project-list"><span class="project-chip" data-ar="المونة" data-en="Mortar" data-it="Malte">المونة</span><span class="project-chip" data-ar="إطارات جصية مكتوبة" data-en="Inscribed gypsum frames" data-it="Cornici in gesso con iscrizioni">إطارات جصية مكتوبة</span><span class="project-chip" data-ar="نوافذ جصية" data-en="Gypsum windows" data-it="Finestre in gesso">نوافذ جصية</span><span class="project-chip" data-ar="واجهات حجرية" data-en="Stone façades" data-it="Facciate in pietra">واجهات حجرية</span><span class="project-chip" data-ar="أسقف خشبية" data-en="Wooden ceilings" data-it="Soffitti lignei">أسقف خشبية</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section profile-section" id="expertise">
+      <div class="container">
+        <div class="section-heading reveal"><h2 data-ar="مجالات الخبرة الفنية" data-en="Technical Expertise" data-it="Competenze Tecniche">مجالات الخبرة الفنية</h2><p data-ar="مجالات العمل المستخلصة من الخبرات والمشروعات المذكورة في السيرة الذاتية." data-en="Areas of practice reflected in the experience and projects listed in the CV." data-it="Aree di attività ricavate dalle esperienze e dai progetti elencati nel CV.">مجالات العمل المستخلصة من الخبرات والمشروعات المذكورة في السيرة الذاتية.</p><div class="heading-line"></div></div>
+        <div class="skills-grid">
+          <article class="skill-card reveal"><i class="fa-solid fa-landmark"></i><h3 data-ar="حفظ المباني الأثرية" data-en="Historic Building Conservation" data-it="Conservazione degli Edifici Storici">حفظ المباني الأثرية</h3><p data-ar="أعمال الترميم والصيانة للمباني الأثرية والتراثية والمجموعات المعمارية التاريخية." data-en="Restoration and maintenance of archaeological and heritage buildings and historic architectural groups." data-it="Restauro e manutenzione di edifici archeologici e storici e complessi architettonici.">أعمال الترميم والصيانة للمباني الأثرية والتراثية والمجموعات المعمارية التاريخية.</p></article>
+          <article class="skill-card reveal"><i class="fa-solid fa-compass-drafting"></i><h3 data-ar="الإشراف وإدارة المشروعات" data-en="Project Supervision" data-it="Supervisione dei Progetti">الإشراف وإدارة المشروعات</h3><p data-ar="متابعة مشروعات الترميم والحفاظ على المواقع الأثرية ضمن مهام الإشراف المذكورة بالسيرة الذاتية." data-en="Oversight of restoration and conservation projects at historic sites, as described in the CV." data-it="Supervisione di progetti di restauro e conservazione in siti storici, come indicato nel CV.">متابعة مشروعات الترميم والحفاظ على المواقع الأثرية ضمن مهام الإشراف المذكورة بالسيرة الذاتية.</p></article>
+          <article class="skill-card reveal"><i class="fa-solid fa-brush"></i><h3 data-ar="ترميم العناصر المعمارية" data-en="Architectural Element Restoration" data-it="Restauro di Elementi Architettonici">ترميم العناصر المعمارية</h3><p data-ar="الواجهات الحجرية، المونة، النوافذ الجصية، الإطارات المزخرفة، والعناصر الخشبية." data-en="Stone façades, mortar, gypsum windows, decorative frames, and wooden elements." data-it="Facciate in pietra, malte, finestre in gesso, cornici decorative ed elementi lignei.">الواجهات الحجرية، المونة، النوافذ الجصية، الإطارات المزخرفة، والعناصر الخشبية.</p></article>
+          <article class="skill-card reveal"><i class="fa-solid fa-building-columns"></i><h3 data-ar="التراث الإسلامي بالقاهرة" data-en="Islamic Heritage in Cairo" data-it="Patrimonio Islamico del Cairo">التراث الإسلامي بالقاهرة</h3><p data-ar="خبرة ميدانية بمساجد وسبل ووكالات وبيوت تاريخية في القاهرة ومصر القديمة." data-en="Field experience at historic mosques, sabils, wakalas, and houses in Cairo and Old Cairo." data-it="Esperienza sul campo in moschee, sabil, wakala e case storiche del Cairo e del Vecchio Cairo.">خبرة ميدانية بمساجد وسبل ووكالات وبيوت تاريخية في القاهرة ومصر القديمة.</p></article>
+          <article class="skill-card reveal"><i class="fa-solid fa-clipboard-check"></i><h3 data-ar="تطوير وتأهيل المواقع" data-en="Site Rehabilitation" data-it="Riqualificazione dei Siti">تطوير وتأهيل المواقع</h3><p data-ar="المشاركة في مشروعات تطوير وتأهيل مواقع تراثية، ومنها المسرح القومي ومتحف النسيج." data-en="Participation in heritage-site development and rehabilitation projects, including the National Theatre and Textile Museum." data-it="Partecipazione a progetti di sviluppo e riqualificazione, tra cui il Teatro Nazionale e il Museo del Tessuto.">المشاركة في مشروعات تطوير وتأهيل مواقع تراثية، ومنها المسرح القومي ومتحف النسيج.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section projects-section" id="education">
+      <div class="container">
+        <div class="section-heading reveal"><h2 data-ar="التعليم واللغات" data-en="Education & Languages" data-it="Formazione e Lingue">التعليم واللغات</h2><p data-ar="المؤهلات واللغات كما وردت في السيرة الذاتية." data-en="Qualifications and languages as listed in the CV." data-it="Qualifiche e lingue come riportate nel CV.">المؤهلات واللغات كما وردت في السيرة الذاتية.</p><div class="heading-line"></div></div>
+        <article class="education-card reveal">
+          <div class="education-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div><h3 data-ar="ليسانس آثار — قسم الترميم" data-en="B.A. in Archaeology — Conservation Department" data-it="Laurea in Archeologia — Dipartimento di Conservazione">ليسانس آثار — قسم الترميم</h3><p data-ar="كلية الآثار، جامعة القاهرة" data-en="Faculty of Archaeology, Cairo University" data-it="Facoltà di Archeologia, Università del Cairo">كلية الآثار، جامعة القاهرة</p><p data-ar="أكتوبر 1997 – مايو 2001 • التقدير: جيد" data-en="October 1997 – May 2001 • Grade: Good" data-it="Ottobre 1997 – Maggio 2001 • Voto: Buono">أكتوبر 1997 – مايو 2001 • التقدير: جيد</p></div>
+        </article>
+        <div style="height:26px"></div>
+        <div class="language-pills">
+          <div class="language-pill reveal"><strong data-ar="العربية" data-en="Arabic" data-it="Arabo">العربية</strong><span data-ar="اللغة الأم" data-en="Native" data-it="Madrelingua">اللغة الأم</span></div>
+          <div class="language-pill reveal"><strong data-ar="الإنجليزية" data-en="English" data-it="Inglese">الإنجليزية</strong><span data-ar="جيد — حسب السيرة الذاتية" data-en="Good — according to CV" data-it="Buono — secondo il CV">جيد — حسب السيرة الذاتية</span></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p data-ar="© أحمد كمال أحمد محمد غالي — الترميم الدقيق للمباني الأثرية والتاريخية" data-en="© Ahmed Kamal Ahmed Mohamed Ghaly — Precision Restoration & Architectural Heritage Conservation" data-it="© Ahmed Kamal Ahmed Mohamed Ghaly — Restauro di Precisione e Conservazione del Patrimonio Architettonico">© أحمد كمال أحمد محمد غالي — الترميم الدقيق للمباني الأثرية والتاريخية</p></div>
+  </footer>
+  <a href="#home" class="back-top" id="back-top" aria-label="العودة للأعلى"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const languageButtons = document.querySelectorAll("[data-lang]");
+      const emailToggle = document.getElementById("gmail-toggle");
+      const emailPopover = document.getElementById("email-popover");
+      const closeEmail = document.getElementById("email-close");
+      const copyButton = document.getElementById("copy-email");
+      const emailAddress = "ahmedkimo909@gmail.com";
+      let copyResetTimer;
+
+      function setLanguage(lang) {
+        if (!["ar", "en", "it"].includes(lang)) return;
+        root.lang = lang;
+        root.dir = lang === "ar" ? "rtl" : "ltr";
+        document.querySelectorAll("[data-" + lang + "]").forEach(el => {
+          el.textContent = el.getAttribute("data-" + lang);
+        });
+        languageButtons.forEach(button => {
+          const active = button.dataset.lang === lang;
+          button.classList.toggle("active", active);
+          button.setAttribute("aria-pressed", String(active));
+        });
+        document.title = lang === "ar"
+          ? "أحمد كمال أحمد محمد غالي | الترميم الدقيق وحفظ التراث"
+          : lang === "it"
+            ? "Ahmed Kamal Ahmed Mohamed Ghaly | Restauro e Patrimonio"
+            : "Ahmed Kamal Ahmed Mohamed Ghaly | Restoration & Heritage";
+      }
+      languageButtons.forEach(button => button.addEventListener("click", () => setLanguage(button.dataset.lang)));
+
+      function showEmail(show) {
+        emailPopover.classList.toggle("open", show);
+        emailToggle.setAttribute("aria-expanded", String(show));
+        emailPopover.setAttribute("aria-hidden", String(!show));
+      }
+      emailToggle.addEventListener("click", () => showEmail(!emailPopover.classList.contains("open")));
+      closeEmail.addEventListener("click", () => showEmail(false));
+      document.addEventListener("click", event => {
+        if (!event.target.closest(".email-wrap")) showEmail(false);
+      });
+      document.addEventListener("keydown", event => {
+        if (event.key === "Escape") {
+          showEmail(false);
+          emailToggle.focus();
+        }
+      });
+
+      copyButton.addEventListener("click", async () => {
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(emailAddress);
+          } else {
+            const field = document.createElement("textarea");
+            field.value = emailAddress;
+            field.setAttribute("readonly", "");
+            field.style.position = "fixed";
+            field.style.opacity = "0";
+            document.body.appendChild(field);
+            field.select();
+            const success = document.execCommand("copy");
+            field.remove();
+            if (!success) throw new Error("Copy command failed");
+          }
+          const label = copyButton.querySelector("span");
+          label.textContent = root.lang === "ar" ? "تم النسخ بنجاح!" : root.lang === "it" ? "Email copiata!" : "Email copied!";
+          copyButton.classList.add("copied");
+          copyButton.querySelector("i").className = "fa-solid fa-check";
+          clearTimeout(copyResetTimer);
+          copyResetTimer = setTimeout(() => {
+            label.textContent = root.lang === "ar" ? "نسخ البريد الإلكتروني" : root.lang === "it" ? "Copia indirizzo email" : "Copy email address";
+            copyButton.classList.remove("copied");
+            copyButton.querySelector("i").className = "fa-regular fa-copy";
+          }, 2200);
+        } catch (error) {
+          const label = copyButton.querySelector("span");
+          label.textContent = root.lang === "ar" ? "حدّد البريد وانسخه يدويًا" : root.lang === "it" ? "Seleziona e copia l’email" : "Select and copy the email";
+        }
+      });
+
+      const revealElements = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+        revealElements.forEach(el => observer.observe(el));
+      } else {
+        revealElements.forEach(el => el.classList.add("is-visible"));
+      }
+
+      const backTop = document.getElementById("back-top");
+      window.addEventListener("scroll", () => backTop.classList.toggle("visible", window.scrollY > 450), { passive: true });
+      setLanguage("ar");
+    })();
+  </script>
+</body>
+</html>
